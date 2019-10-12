@@ -1,0 +1,78 @@
+<div class="ec-product">
+  <fade-transition :duration="700">
+    <div class="row" v-if="body._id">
+      <div class="col-12 col-md-6">
+        <sf-gallery
+          :sliderOptions="{ rewind: true }"
+          :images="body.pictures"
+          @click:stage="openPhotoswipe"
+        />
+      </div>
+
+      <div class="col">
+        <h1 class="ec-product__name">
+          {{ name(body) }}
+        </h1>
+        <p class="ec-product__sku">
+          COD: {{ body.sku }}
+        </p>
+
+        <p v-if="!body.available" class="ec-product__unavailable">
+          {{ dictionary('unavailable') }}
+        </p>
+        <p v-else-if="!inStock(body)" class="ec-product__out-of-stock">
+          {{ dictionary('out_of_stock') }}
+        </p>
+
+        <template v-else>
+          <slot name="prices">
+            <p class="ec-product__prices">
+              <ec-prices
+                :lang="lang"
+                :product="body"
+                :literal="true"
+                :big="true"
+              />
+
+              <span class="ec-product__discount" v-if="discount > 0">
+                {{ dictionary('discount_of') }} <strong>{{ discount }}%</strong>
+              </span>
+            </p>
+          </slot>
+
+
+          <div
+            @click="$emit('buy', { product: body })"
+            class="ec-product__buy"
+          >
+            <slot name="buy">
+              <button type="button" class="btn btn-lg btn-primary">
+                <i class="fas fa-shopping-bag mr-1"></i>
+                {{ strBuy }}
+              </button>
+            </slot>
+          </div>
+
+          <slot name="shipping">
+            <ec-shipping
+              :lang="lang"
+              :shippedItems="[{
+                ...body,
+                product_id: body._id,
+                quantity: 1
+              }]"
+            />
+          </slot>
+        </template>
+
+        <p v-if="body.short_description" class="ec-product__info lead">
+          {{ body.short_description }}
+        </p>
+      </div>
+    </div>
+  </fade-transition>
+
+  <template v-if="!body._id">
+    <slot />
+  </template>
+</div>
