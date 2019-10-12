@@ -5,6 +5,8 @@ import App from './App.vue'
 import router from './router/'
 import store from './store/'
 import { FadeTransition, SlideXLeftTransition } from 'vue2-transitions'
+import './lib/clipboard'
+import './lib/credit-card'
 
 const { title } = document
 router.afterEach(to => {
@@ -20,6 +22,12 @@ router.afterEach(to => {
       subtitle = i18n({
         en_us: 'Checkout',
         pt_br: 'Finalizar compra'
+      })
+      break
+    case 'confirmation':
+      subtitle = i18n({
+        en_us: '✓ We received your order',
+        pt_br: '✓ Recebemos seu pedido'
       })
       break
     case 'account':

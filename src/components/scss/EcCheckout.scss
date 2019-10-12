@@ -67,8 +67,15 @@
 
   &__info {
     background: var(--light);
-    border-left: .3rem solid var(--secondary);
-    border-radius: .25rem 0 0 .25rem;
+
+    @media (max-width: 991.98px) {
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 992px) {
+      border-left: .3rem solid var(--secondary);
+      border-radius: .25rem 0 0 .25rem;
+    }
   }
 
   &__back {
@@ -87,13 +94,17 @@
   }
 
   &__shipping {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     &-method {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: .25rem;
+      margin-bottom: 1rem;
+      border-radius: .25rem;
+      padding: .75rem 1rem;
+      background: var(--light);
+      border-left: 3px solid var(--success);
 
       small {
         color: var(--gray);
@@ -128,11 +139,23 @@
     height: 100%;
   }
 
+  &__user {
+    margin-bottom: 1rem;
+
+    small {
+      color: var(--gray);
+    }
+  }
+
   &__item {
     display: flex;
     align-items:flex-start;
     overflow-x: hidden;
     margin-bottom: .5rem;
+
+    a {
+      color: inherit;
+    }
 
     img {
       flex: 0 0 50px;
@@ -141,21 +164,30 @@
     }
 
     small {
-      white-space: nowrap;
+      line-height: 1.3;
+      display: inline-block;
     }
   }
 
   &__amount {
-    margin-top: 1.5rem;
-    padding-top: .75rem;
+    margin: 1.5rem 0;
+    padding: .75rem 0;
     border-top: 1px dotted var(--gray);
 
     &__row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      margin-top: .25rem;
 
       > span {
         font-weight: 300;
+
+        small {
+          display: block;
+          line-height: 1.15;
+          color: var(--gray);
+        }
       }
 
       &--total {

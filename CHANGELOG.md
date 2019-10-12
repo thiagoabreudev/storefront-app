@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.13](https://github.com/ecomclub/storefront-app/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2019-10-11)
+
+
+### Features
+
+* **confirmation:** handle new order confirmation with EcOrderInfo ([a753cfb](https://github.com/ecomclub/storefront-app/commit/a753cfb))
+* **confirmation:** states and handlers for confirmation view ([61a585f](https://github.com/ecomclub/storefront-app/commit/61a585f))
+
+## [1.0.0-beta.12](https://github.com/ecomclub/storefront-app/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2019-10-09)
+
+
+### Features
+
+* **confirmation:** add confirmation route, move to it after checkout ([bb7cd96](https://github.com/ecomclub/storefront-app/commit/bb7cd96))
+* **order:** setup EcOrderInfo component with order refresh service ([6cc3288](https://github.com/ecomclub/storefront-app/commit/6cc3288))
+
+## [1.0.0-beta.11](https://github.com/ecomclub/storefront-app/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2019-10-09)
+
+
+### Bug Fixes
+
+* **address:** fixes for addresses list and form ([d9a6dfd](https://github.com/ecomclub/storefront-app/commit/d9a6dfd))
+* **checkout:** update checkout emitted event, minor edit styles ([73190cb](https://github.com/ecomclub/storefront-app/commit/73190cb))
+* **credit-card:** update emited event, send transaction object as value ([e8348fe](https://github.com/ecomclub/storefront-app/commit/e8348fe))
+
+
+### Features
+
+* **state:** send checkout to modules api ([841a237](https://github.com/ecomclub/storefront-app/commit/841a237))
+
+## [1.0.0-beta.10](https://github.com/ecomclub/storefront-app/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2019-10-09)
+
+
+### Features
+
+* **checkout:** setup checkout summary and fix steps mobile view ([e0836d9](https://github.com/ecomclub/storefront-app/commit/e0836d9))
+
 ## [1.0.0-beta.9](https://github.com/ecomclub/storefront-app/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2019-10-08)
 
 

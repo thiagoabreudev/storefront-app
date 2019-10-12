@@ -65,13 +65,15 @@ export default {
       'selectPaymentGateway',
       'setCustomer',
       'setCustomerEmail',
-      'selectAddress'
+      'selectAddress',
+      'addOrder'
     ]),
 
     ...mapActions([
       'fetchCartItems',
       'fetchCustomer',
-      'saveCustomer'
+      'saveCustomer',
+      'sendCheckout'
     ]),
 
     login (ecomPassport) {
@@ -81,8 +83,20 @@ export default {
         .finally(() => this.triggerLoading(false))
     },
 
-    checkout (data) {
-      console.log(data)
+    checkout (transaction) {
+      const { customer } = this
+      this.triggerLoading(true)
+      this.sendCheckout({ customer, transaction })
+        .then(order => {
+          this.addOrder(order)
+          this.$router.push({
+            name: 'confirmation',
+            params: {
+              id: order._id
+            }
+          })
+        })
+        .finally(() => this.triggerLoading(false))
     }
   },
 
