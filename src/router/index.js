@@ -37,6 +37,20 @@ const routes = [
     )
   },
   {
+    path: '/product',
+    name: 'product',
+    component: () => import(
+      './../views/Product.vue'
+    )
+  },
+  {
+    path: '/product-old',
+    name: 'product-old',
+    component: () => import(
+      './../views/ProductOld.vue'
+    )
+  },
+  {
     path: '/:id?',
     redirect: {
       name: 'cart'

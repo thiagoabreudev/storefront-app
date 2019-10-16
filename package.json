@@ -34,6 +34,7 @@
     "@ecomplus/passport-client": "^0.7.3",
     "@ecomplus/storefront-twbs": "^3.5.0",
     "@ecomplus/utils": "^1.1.0",
+    "@storefront-ui/vue": "^0.3.1",
     "axios": "^0.19.0",
     "card-validator": "^6.2.0",
     "cleave.js": "^1.5.3",
